@@ -8,11 +8,13 @@ app.config.from_object(__name__)
 
 # Load default config and override config from an environment variable
 app.config.update(dict(
-    DATABASE=os.path.join(app.root_path, 'db', 'cards.db'),
-    SECRET_KEY='development key',
+    # DATABASE=os.path.join(app.root_path, 'db', 'cards.db'),
+    DATABASE=os.path.join(app.root_path, 'cards-jwasham.db'),
+    SECRET_KEY='shit',
     USERNAME='admin',
     PASSWORD='default'
 ))
+print(app.config)
 app.config.from_envvar('CARDS_SETTINGS', silent=True)
 
 
